@@ -7,17 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-
+@RequestMapping("/webhook")
 public class HelloWorldController {
-   @RequestMapping("/webhook")
-    @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
-
-        System.out.println(obj);
-
-        return new WebhookResponse("Hello! " + obj, "Text " + obj);
-    }@RequestMapping("/ciao")
-     @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
 
         System.out.println(obj);
